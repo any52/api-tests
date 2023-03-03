@@ -34,7 +34,7 @@ public class ReqresInTests {
     }
 
     @Test
-    @DisplayName("Check that status code of request of non-existent resource is 404 Not Found")
+    @DisplayName("Check that status code of request of non-existent resource is 404 Not Found ")
     void resourceNotFoundTest() {
         given()
                 .log().all()
