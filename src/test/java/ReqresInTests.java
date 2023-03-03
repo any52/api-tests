@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.is;
 
 public class ReqresInTests {
 
-    public static final String BASE_URL = "https://reqres.in";
+    public static final String BASE_URL = "https://reqres.in/api";
 
     @Test
     @DisplayName("Check that status code of request of list existing users is 200 OK")
@@ -15,7 +15,7 @@ public class ReqresInTests {
         given()
                 .log().all()
                 .when()
-                .get(BASE_URL + "/api/users?page=2")
+                .get(BASE_URL + "/users?page=2")
                 .then()
                 .log().all()
                 .statusCode(200);
@@ -27,7 +27,7 @@ public class ReqresInTests {
         given()
                 .log().all()
                 .when()
-                .get(BASE_URL + "/api/unknown")
+                .get(BASE_URL + "/unknown")
                 .then()
                 .log().all()
                 .statusCode(200);
@@ -39,7 +39,7 @@ public class ReqresInTests {
         given()
                 .log().all()
                 .when()
-                .get(BASE_URL + "/api/unknown/23")
+                .get(BASE_URL + "/unknown/23")
                 .then()
                 .log().all()
                 .statusCode(404);
@@ -55,7 +55,7 @@ public class ReqresInTests {
                 .contentType(JSON)
                 .body(user)
                 .when()
-                .post(BASE_URL + "/api/users")
+                .post(BASE_URL + "/users")
                 .then()
                 .log().all()
                 .statusCode(201)
@@ -73,7 +73,7 @@ public class ReqresInTests {
                 .contentType(JSON)
                 .body(data)
                 .when()
-                .post(BASE_URL + "/api/register")
+                .post(BASE_URL + "/register")
                 .then()
                 .log().all()
                 .statusCode(200)
@@ -90,7 +90,7 @@ public class ReqresInTests {
                 .contentType(JSON)
                 .body(user)
                 .when()
-                .put(BASE_URL + "/api/users/2")
+                .put(BASE_URL + "/users/2")
                 .then()
                 .log().all()
                 .statusCode(200)
@@ -104,7 +104,7 @@ public class ReqresInTests {
         given()
                 .log().all()
                 .when()
-                .delete(BASE_URL + "/api/users/2")
+                .delete(BASE_URL + "/users/2")
                 .then()
                 .log().all()
                 .statusCode(204);
