@@ -10,7 +10,7 @@ public class ReqresInTests {
     public static final String BASE_URL = "https://reqres.in";
 
     @Test
-    @DisplayName("Check that status code of request of list existing users is 200 OK ")
+    @DisplayName("Check that status code of request of list existing users is 200 OK")
     void getListUsersTest() {
         given()
                 .log().all()
@@ -22,7 +22,7 @@ public class ReqresInTests {
     }
 
     @Test
-    @DisplayName("Check that status code of request of list existing resources is 200 OK ")
+    @DisplayName("Check that status code of request of list existing resources is 200 OK")
     void getListResourcesTest() {
         given()
                 .log().all()
@@ -34,7 +34,7 @@ public class ReqresInTests {
     }
 
     @Test
-    @DisplayName("Check that status code of request of non-existent resource is 404 Not Found ")
+    @DisplayName("Check that status code of request of non-existent resource is 404 Not Found")
     void resourceNotFoundTest() {
         given()
                 .log().all()
