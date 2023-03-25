@@ -165,7 +165,7 @@ public class ReqresInTests {
 
     @Test
     @DisplayName("Check status code, name and job of request creating user")
-    void createUserTestUsingGroovy() {
+    void createUserTestUsingBodyVerification() {
 
         UserModelForCreateRequest userModel = new UserModelForCreateRequest();
         userModel.setName("morpheus");
@@ -185,7 +185,7 @@ public class ReqresInTests {
 
     @Test
     @DisplayName("Check status code, name and job of request updating user")
-    void updateUserTestUsingGroovy() {
+    void updateUserTestUsingBodyVerification() {
 
         UserModelForUpdateRequest userModel = new UserModelForUpdateRequest();
         userModel.setName("morpheus");
