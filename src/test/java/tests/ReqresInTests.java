@@ -151,9 +151,9 @@ public class ReqresInTests {
     }
 
     @Test
-    @DisplayName("Check that status code of request of list existing resources, name resources with id = 1")
+    @DisplayName("Check that status code of request of list existing resources, name resource with id = 1")
     void getListResourcesTestUsingGroovy() {
-        step("Check that status code of request of list existing resources, name resources with id = 1", () -> {
+        step("Check that status code of request of list existing resources, name resource with id = 1", () -> {
             given(commonRequestSpec)
                     .when()
                     .get("/unknown")
