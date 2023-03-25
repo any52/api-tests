@@ -10,10 +10,11 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.is;
 import static spec.Spec.*;
 
 public class ReqresInTests {
-
 
     @Test
     @DisplayName("Check that status code of request of list existing users is 200 OK")
@@ -26,6 +27,7 @@ public class ReqresInTests {
                     .spec(commonResponseSpec);
         });
     }
+
     @Test
     @DisplayName("Check that status code of request of list existing resources is 200 OK")
     void getListResourcesTest() {
@@ -127,6 +129,77 @@ public class ReqresInTests {
                     .then()
                     .log().all()
                     .statusCode(204);
+        });
+    }
+
+    @Test
+    @DisplayName("Check that status code of request of list existing users, " +
+            "total number of users, user by email")
+    void getListUsersTestUsingGroovy() {
+        step("Check that status code of request of list existing users, total of users, " +
+                "user by email", () -> {
+            given(commonRequestSpec)
+                    .when()
+                    .get("/users?page=2")
+                    .then()
+                    .spec(commonResponseSpec)
+                    .body("total", is(12))
+                    .body("data.findAll{it.email =~/.*?@reqres.in/}.email.flatten()",
+                            hasItem("michael.lawson@reqres.in"));
+
+        });
+    }
+
+    @Test
+    @DisplayName("Check that status code of request of list existing resources, name resources with id = 1")
+    void getListResourcesTestUsingGroovy() {
+        step("Check that status code of request of list existing resources, name resources with id = 1", () -> {
+            given(commonRequestSpec)
+                    .when()
+                    .get("/unknown")
+                    .then()
+                    .spec(commonResponseSpec)
+                    .body("data.find{it.id == 1}.name", is("cerulean"));
+        });
+    }
+
+    @Test
+    @DisplayName("Check status code, name and job of request creating user")
+    void createUserTestUsingGroovy() {
+
+        UserModelForCreateRequest userModel = new UserModelForCreateRequest();
+        userModel.setName("morpheus");
+        userModel.setJob("leader");
+        step("Check status code, name and job of request creating user", () -> {
+            return given(userOrLoginRequestSpec)
+                    .body(userModel)
+                    .when()
+                    .post("/users")
+                    .then()
+                    .spec(userCreateResponseSpec)
+                    .body("name", is("morpheus"))
+                    .body("job", is("leader"));
+        });
+    }
+
+
+    @Test
+    @DisplayName("Check status code, name and job of request updating user")
+    void updateUserTestUsingGroovy() {
+
+        UserModelForUpdateRequest userModel = new UserModelForUpdateRequest();
+        userModel.setName("morpheus");
+        userModel.setJob("zion resident");
+        step("Check status code, name and job of request updating user", () -> {
+            return given(userOrLoginRequestSpec)
+                    .body(userModel)
+                    .when()
+                    .put("/users/2")
+                    .then()
+                    .spec(userUpdateResponseSpec)
+                    .body("name", is("morpheus"))
+                    .body("job", is("zion resident"));
+
         });
     }
 
