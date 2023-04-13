@@ -1,5 +1,5 @@
 # Проект по тестированию для сайта "Reqres.in"
-<a target="_blank" href="https://https://reqres.in/">Вэб сайт "Фридом Финанс"</a>
+<a target="_blank" href="https://reqres.in/">Вэб сайт "Reqres.in"</a>
 
 ## :pushpin: Содержание:
 
@@ -51,7 +51,7 @@ gradle clean api_test
 clean api_test
 ```
 
-## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-any_mois-cifra-broker-tests/allure/">Allure report</a>
+## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-any_mois-api-tests-unit19/5/allure/">Allure report</a>
 
 ### Основное окно
 
@@ -76,6 +76,12 @@ clean api_test
 ### Дашборд
 
 <p align="center">
+<img title="Allure TestOps Dashboard" src="images/testOps_dashboards.png">
+</p>
+
+### Запуски
+
+<p align="center">
 <img title="Allure TestOps Dashboard" src="images/testOps_main.png">
 </p>
 
@@ -86,7 +92,7 @@ clean api_test
 </p>
 
 
-## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
+## <img src="images/Telegram.svg" width="20" height="20"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/allure_telegram.png">
