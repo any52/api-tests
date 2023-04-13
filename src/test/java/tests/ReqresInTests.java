@@ -1,10 +1,12 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import model.LoginBodyModel;
 import model.LoginResponseModel;
 import model.UserModelForCreateRequest;
 import model.UserModelForUpdateRequest;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -15,6 +17,8 @@ import static spec.Spec.*;
 public class ReqresInTests {
 
     @Test
+    @Owner("almoiseeva")
+    @Tag("api")
     @DisplayName("Check that status code of request of list existing users is 200 OK")
     void getListUsersTest() {
         step("Check that status code of request of list existing users is 200 OK", () -> {
@@ -27,6 +31,8 @@ public class ReqresInTests {
     }
 
     @Test
+    @Owner("almoiseeva")
+    @Tag("api")
     @DisplayName("Check that status code of request of list existing resources is 200 OK")
     void getListResourcesTest() {
         step("Check that status code of request of list existing resources is 200 OK", () -> {
@@ -39,6 +45,8 @@ public class ReqresInTests {
     }
 
     @Test
+    @Owner("almoiseeva")
+    @Tag("api")
     @DisplayName("Check that status code of request of non-existent resource is 404 Not Found ")
     void resourceNotFoundTest() {
         step("Check that status code of request of non-existent resources is 404 Not Found", () -> {
@@ -52,6 +60,8 @@ public class ReqresInTests {
     }
 
     @Test
+    @Owner("almoiseeva")
+    @Tag("api")
     @DisplayName("Check status code, name and job of request creating user")
     void createUserTest() {
 
@@ -74,6 +84,8 @@ public class ReqresInTests {
     }
 
     @Test
+    @Owner("almoiseeva")
+    @Tag("api")
     @DisplayName("Check status code and token of request registration user")
     void registerUserTest() {
 
@@ -95,6 +107,8 @@ public class ReqresInTests {
     }
 
     @Test
+    @Owner("almoiseeva")
+    @Tag("api")
     @DisplayName("Check status code, name and job of request updating user")
     void updateUserTest() {
 
@@ -118,6 +132,8 @@ public class ReqresInTests {
     }
 
     @Test
+    @Owner("almoiseeva")
+    @Tag("api")
     @DisplayName("Check that status code of request deleting user is 204 No Content ")
     void deleteUserTest() {
         step("Check that status code of request deleting user is 204 No Content ", () -> {
