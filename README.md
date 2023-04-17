@@ -34,7 +34,7 @@
 - ✓ Check that status code of request deleting user is 204 No Content.
 
 ## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins job
-<a target="_blank" href="https://jenkins.autotests.cloud/job/017-any_mois-api-tests-unit19/5/">Сборка в Jenkins</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/017-any_mois-api-tests-unit19/6/">Сборка в Jenkins</a>
 <p align="center">
 <img src="images/jenkins_job.png" alt="Jenkins"/></a>
 </p>
@@ -51,7 +51,7 @@ gradle clean api_test
 clean api_test
 ```
 
-## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-any_mois-api-tests-unit19/5/allure/">Allure report</a>
+## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-any_mois-api-tests-unit19/6/allure/">Allure report</a>
 
 ### Основное окно
 
@@ -71,7 +71,7 @@ clean api_test
 <img title="Allure Graphics" src="images/allure_graphics.png">
 </p>
 
-## <img src="images/Allure_EE.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/launch/19377">Allure TestOps</a>
+## <img src="images/Allure_EE.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/launch/22471">Allure TestOps</a>
 
 ### Дашборд
 
